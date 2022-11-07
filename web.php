@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TestController;
 
-Route::get('/building/{room?}/{id}', function ($room, $id) {
-  return $room . '部屋番号は' . 3 . 'です';
+Route::get('/building', [TestController::class, 'index']);
+
+Route::get('/building/{room}', function ($room,) {
+  return '部屋番号は' . $room . 'です';
 });
