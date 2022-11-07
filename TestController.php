@@ -1,13 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TestController;
 
-use Illuminate\Http\Request;
+Route::get('/building', [TestController::class, 'index']);
 
-class TestController extends Controller
-{
-  public function index()
-  {
-    return "建物です";
-  }
-}
+Route::get('/building/{room}', function ($room,) {
+  return '部屋番号は' . $room . 'です';
+});
